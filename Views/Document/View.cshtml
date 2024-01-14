@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "View Document";
+}
+
+<h1>View Document</h1>
+
+<p>
+    @Html.Raw(ViewBag.DocumentContent)
+</p>
+
+<p>
+    <a asp-action="Index" asp-controller="Document">Back to List</a>
+</p>
