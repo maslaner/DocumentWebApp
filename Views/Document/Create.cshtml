@@ -1,0 +1,23 @@
+@model string
+
+@{
+    ViewData["Title"] = "Create Document";
+}
+
+<h1>Create Document</h1>
+
+<form asp-action="SaveDocument" asp-controller="Document" method="post">
+    <input type="hidden" asp-for="Category" value="@ViewContext.RouteData.Values["category"]" />
+    <input type="hidden" asp-for="DocumentName" value="@ViewContext.RouteData.Values["documentName"]" />
+
+    <div class="form-group">
+        <label asp-for="Content"></label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Document</button>
+</form>
+
+<p>
+    <a asp-action="Index" asp-controller="Document">Back to List</a>
+</p>
